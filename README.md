@@ -27,6 +27,7 @@ Building production-grade computer vision systems. Research-focused on medical i
 
 - Turning structured CV repositories into reproducible research projects with datasets, ablations, model cards, and deployment notes.
 - Improving portfolio signal by connecting code to paper notes in [publications-packet](https://github.com/mrsddq/publications-packet).
+- Adding evidence plans to each pinned repo so metrics, screenshots, and model cards come from reproducible runs.
 
 ### Papers I've Implemented or Mapped to Code
 
