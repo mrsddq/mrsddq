@@ -33,6 +33,13 @@ My strongest lane is DevOps to Platform Engineering to ML Platform Engineering t
 
 ### Additional Work
 
+Two additional public repositories support the same direction:
+
+| Project | Focus | What it demonstrates |
+|---|---|---|
+| [devops-policy-audit-toolkit](https://github.com/mrsddq/devops-policy-audit-toolkit) | DevOps policy automation | CLI checks for Terraform, Kubernetes, IAM, Dockerfiles, GitHub Actions and report generation |
+| [rental-price-mlops-pipeline](https://github.com/mrsddq/rental-price-mlops-pipeline) | End-to-end MLOps pipeline | Data validation, model quality gates, model artifact packaging, registry metadata, FastAPI serving and Kubernetes deployment |
+
 I keep earlier computer-vision and AI repositories public as learning and research archives, but my current market focus is DevOps, Platform Engineering, SRE and ML platform infrastructure.
 
 ### Interview Themes
