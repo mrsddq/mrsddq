@@ -1,53 +1,57 @@
-## Laraib Ahmad Siddiqui - Senior DevOps Engineer | ML Platform & MLOps Infrastructure
+# Laraib Ahmad Siddiqui
 
-AWS-first platform engineer with 4+ years of experience across Kubernetes, Terraform, CI/CD, GitOps, SRE and production operations. Building secure, observable and automated infrastructure for cloud-native and machine-learning workloads.
+**AI Evaluation | Software Engineering | DevOps & MLOps**
 
-### Current Positioning
+I build reproducible evaluation environments and infrastructure for software and ML workloads. My work connects coding-agent benchmarks, Python automation, AWS/Kubernetes operations, and model deployment.
 
-**Senior DevOps Engineer | ML Platform & MLOps Infrastructure**
+[e-mail](mailto:laraibahmadsiddiqui@gmail.com) | [LinkedIn](https://www.linkedin.com/in/laraib-ahmad-siddiqui/) | [GitHub](https://github.com/mrsddq)
 
-My strongest lane is DevOps to Platform Engineering to ML Platform Engineering to MLOps. I focus on the infrastructure, deployment, reliability, observability, governance and lifecycle automation needed to operate production systems and ML workloads.
+## Selected engineering projects
 
-### Core Skills
+| Project | What you can inspect |
+| --- | --- |
+| [Rental Price MLOps Pipeline](https://github.com/mrsddq/rental-price-mlops-pipeline) | A rental-prediction case study with data validation, model quality gates, artifact and registry metadata, FastAPI serving, Docker, tests, and Kubernetes/Helm manifests. |
+| [DevOps Policy Audit Toolkit](https://github.com/mrsddq/devops-policy-audit-toolkit) | A Python CLI for infrastructure and CI policy checks, with configurable severity gates, finding baselines, SARIF/HTML/JSON reporting, and automated tests. |
+| [ML Platform Infrastructure on Kubernetes](https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes) | A model-serving infrastructure demo with a Python scoring API, Docker, Helm, Argo CD manifests, Prometheus metrics, and container smoke checks. |
+| [AWS EKS Platform Blueprint](https://github.com/mrsddq/aws-eks-platform-blueprint) | A reference platform with Terraform VPC/EKS configuration, IAM boundaries, Kubernetes manifests, GitOps configuration, observability values, and operating runbooks. |
+
+These are portfolio implementations, demos, and blueprints. Each repository documents its scope, setup, and validation steps.
+
+## AI evaluation engineering
+
+At **Handshake AI (Jun-Sep 2026)**, my work included:
+
+- Developing coding and terminal-agent benchmarks covering systems infrastructure, software engineering, data processing, and machine learning.
+- Building reproducible Docker environments, Python/Bash reference solutions, and independent hidden verifiers, with Oracle, NOP, regression, and mutation testing.
+- Investigating agent execution and infrastructure failures, and using pass@2/pass@5 results alongside execution trajectories to identify shortcuts and reliability issues.
+- Consolidating **95 repositories across 15 categories and 52 subcategory groups** into a private GitHub library, preserving source-commit provenance and automated integrity checks.
+- Verifying **5,440 files**, preserving executable permissions, and reviewing secret-scan findings.
+
+Client benchmark implementations remain private.
+
+At **AfterQuery (Jun-Jul 2026)**, I built repository and terminal-based evaluations for configuration repair, Linux troubleshooting, service recovery, bug fixing, and refactoring, with fail-to-pass and pass-to-pass regression checks.
+
+## Engineering toolkit
 
 | Area | Tools and practices |
-|---|---|
-| Cloud | AWS, EKS, EC2, VPC, IAM, S3, RDS, CloudWatch, Azure/GCP exposure |
-| Containers and GitOps | Kubernetes, Docker, Helm, Argo CD, Kustomize |
-| IaC and automation | Terraform, Terragrunt, Ansible, Python, Boto3, Bash |
-| CI/CD | GitHub Actions, GitLab CI/CD, Jenkins, AWS CodePipeline |
-| SRE and observability | Prometheus, Grafana, CloudWatch, ELK, SLO/SLI, incident response, RCA |
-| ML platform | MLflow, Kubeflow workflow support, FastAPI model serving, model registry handoff, monitoring, rollback patterns |
-| Security and governance | RBAC, IAM, NetworkPolicy, Kyverno, OPA, Trivy, secrets management, cost optimisation |
+| --- | --- |
+| Programming and testing | Python, Bash, PowerShell, SQL, pytest, Git, Linux, automated regression testing |
+| AI evaluation | Agent benchmarks, reference solutions, hidden verifiers, trajectory analysis, mutation testing |
+| Cloud and infrastructure | AWS, EKS, EC2, VPC, IAM, S3, RDS, Terraform, Terragrunt, CloudFormation, Ansible; working exposure to Azure and GCP |
+| Containers and delivery | Docker, Kubernetes, Helm, Kustomize, GitHub Actions, GitLab CI/CD, Jenkins, Argo CD, Flux CD |
+| MLOps | MLflow, Kubeflow Pipelines, FastAPI, model artifacts, experiment tracking, quality reports, drift checks |
+| Reliability and security | Prometheus, Grafana, CloudWatch, ELK/EFK, Datadog, IAM, OIDC, RBAC, KMS, Secrets Manager, incident response, RCA |
+| Data infrastructure | Kafka, Apache Spark, dbt, Amazon Redshift, Snowflake |
 
-### Featured Platform Portfolio
+## More platform work
 
-| Project | Focus | What it demonstrates |
-|---|---|---|
-| [aws-eks-platform-blueprint](https://github.com/mrsddq/aws-eks-platform-blueprint) | AWS/EKS platform engineering | Terraform VPC/EKS blueprint, GitOps, autoscaling, RBAC, Prometheus/Grafana/Loki |
-| [ml-platform-infrastructure-on-kubernetes](https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes) | ML platform infrastructure | FastAPI model serving, Docker, Helm, Argo CD, MLflow flow, metrics and rollback docs |
-| [terraform-gitops-delivery-platform](https://github.com/mrsddq/terraform-gitops-delivery-platform) | IaC delivery platform | Multi-environment Terraform, CI validation, OPA policy examples, Kustomize and Argo CD promotion |
-| [sre-observability-incident-response-lab](https://github.com/mrsddq/sre-observability-incident-response-lab) | SRE and incident response | Instrumented Python service, SLOs, alerts, dashboards, synthetic checks, runbooks and RCA templates |
-| [secure-kubernetes-platform-hardening](https://github.com/mrsddq/secure-kubernetes-platform-hardening) | Kubernetes security | Pod Security Standards, NetworkPolicies, RBAC, Kyverno, OPA, secret templates and Trivy CI |
-| [cloud-cost-optimization-toolkit](https://github.com/mrsddq/cloud-cost-optimization-toolkit) | Cloud automation and FinOps | Python CLI for idle resources, missing tags, oversized resources, dry-run reports and optional Boto3 inventory |
+- [Terraform GitOps Delivery Platform](https://github.com/mrsddq/terraform-gitops-delivery-platform)
+- [SRE Observability and Incident Response Lab](https://github.com/mrsddq/sre-observability-incident-response-lab)
+- [Secure Kubernetes Platform Hardening](https://github.com/mrsddq/secure-kubernetes-platform-hardening)
+- [Cloud Cost Optimization Toolkit](https://github.com/mrsddq/cloud-cost-optimization-toolkit)
 
-### Additional Work
+## Opportunities and interests
 
-Two additional public repositories support the same direction:
+Based in Delhi NCR, India. Interested in **Research Engineer, Software Engineer, AI Evaluation Engineer, DevOps Engineer, and MLOps Engineer** opportunities.
 
-| Project | Focus | What it demonstrates |
-|---|---|---|
-| [devops-policy-audit-toolkit](https://github.com/mrsddq/devops-policy-audit-toolkit) | DevOps policy automation | CLI checks for Terraform, Kubernetes, IAM, Dockerfiles, GitHub Actions and report generation |
-| [rental-price-mlops-pipeline](https://github.com/mrsddq/rental-price-mlops-pipeline) | End-to-end MLOps pipeline | Data validation, model quality gates, model artifact packaging, registry metadata, FastAPI serving and Kubernetes deployment |
-
-I keep earlier computer-vision and AI repositories public as learning and research archives, but my current market focus is DevOps, Platform Engineering, SRE and ML platform infrastructure.
-
-### Interview Themes
-
-- Designing AWS EKS platforms with Terraform, IAM, networking and observability.
-- Building GitOps delivery flows with CI validation, Helm/Kustomize and Argo CD.
-- Operating services with SLOs, alerts, runbooks, RCA and incident response discipline.
-- Securing Kubernetes with RBAC, NetworkPolicy, Pod Security Standards and admission controls.
-- Bridging DevOps into MLOps through model serving, registry handoffs, monitoring and rollback patterns.
-
-![GitHub stats](https://github-readme-stats.vercel.app/api?username=mrsddq&show_icons=true&theme=default&hide_title=true)
+My research interests include multimodal and multilingual model evaluation, agentic systems, and reliable ML infrastructure.
