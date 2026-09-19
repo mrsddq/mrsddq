@@ -1,0 +1,1890 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-09-17",
+  "main_verification_snapshot_at": "2026-09-17T03:51:24.896Z",
+  "publication_status": "report_pull_request",
+  "scope": "39 public repositories; source correctness, reproducibility, tests, delivery configuration and truthful evidence boundaries.",
+  "counts": {
+    "repositories": 39,
+    "merged_implementation_pull_requests": 12,
+    "verified_main_push_workflow_runs": 16,
+    "pending_pull_request_changesets": 28
+  },
+  "status_note": "Counts include this profile report and policy runbook PR2. A merged implementation can have a separate open documentation pull request. The profile record uses its report branch rather than a self-referential commit hash.",
+  "validation_boundary": "Passing tests or CI establish only the exercised contracts. They do not establish production readiness, cloud deployment, model accuracy, clinical validity, research quality or investment performance.",
+  "groups": [
+    {
+      "name": "Core DevOps and MLOps projects",
+      "repositories": [
+        "rental-price-mlops-pipeline",
+        "devops-policy-audit-toolkit",
+        "ml-platform-infrastructure-on-kubernetes",
+        "aws-eks-platform-blueprint"
+      ]
+    },
+    {
+      "name": "Cloud platforms and reliability",
+      "repositories": [
+        "cloud-cost-optimization-toolkit",
+        "sre-observability-incident-response-lab",
+        "terraform-gitops-delivery-platform",
+        "secure-kubernetes-platform-hardening"
+      ]
+    },
+    {
+      "name": "AI applications and evaluation",
+      "repositories": [
+        "rag-evaluation-suite",
+        "pdf-chatbot",
+        "sentiment-analysis-api",
+        "news-article-extractor-summarizer",
+        "ai-code-review-bot",
+        "deep-research-agent",
+        "local-voice-ai-pipeline",
+        "llm-guardrails"
+      ]
+    },
+    {
+      "name": "Vision and multimodal engineering",
+      "repositories": [
+        "medical-segmentation",
+        "yolov8-detection",
+        "clip-image-captioning",
+        "ocr-pipeline",
+        "pose-estimation-qa",
+        "vit-robustness-xai"
+      ]
+    },
+    {
+      "name": "Software engineering",
+      "repositories": [
+        "python-algorithm-lab",
+        "moving-average-trading-bot",
+        "e-commerce-web-app",
+        "social-media-web-app",
+        "java-tomcat-ci-demo"
+      ]
+    },
+    {
+      "name": "Learning and coursework archives",
+      "repositories": [
+        "devops-learning-archive",
+        "generative-ai-web-archive",
+        "node-express-learning-archive",
+        "30-day-coding-archive",
+        "mlops-learning-archive",
+        "ai-car-ml-notebooks",
+        "udacity-computer-vision-nanodegreee",
+        "frontend-learning"
+      ]
+    },
+    {
+      "name": "Research writing and profile documentation",
+      "repositories": [
+        "research-portfolio-packet",
+        "ai-ml-technical-blog",
+        "github-profile-setup",
+        "mrsddq"
+      ]
+    }
+  ],
+  "repositories": [
+    {
+      "name": "rental-price-mlops-pipeline",
+      "repository_url": "https://github.com/mrsddq/rental-price-mlops-pipeline",
+      "reviewed_head_sha": "e1cc6937ee5f2ec0352986ad1b08d89dbc37aa75",
+      "base_sha": "063742575bf263c453ac0e9f29da8e8513fd077f",
+      "status": "open",
+      "change_summary": [
+        "Connect quality-gated trained artifacts to inference with artifact schema, digest and compatibility checks.",
+        "Prevent failed quality gates from replacing serving artifacts.",
+        "Exercise the full nonroot container test suite and bounded readiness retries."
+      ],
+      "validation": [
+        "53 local pytest tests pass",
+        "Actual TCP connection-reset followed by HTTP200 verified readiness curl retry flags",
+        "git diff --check passed",
+        "Remote default container compile, full nonroot pytest container suite, artifact-backed HTTP health/prediction, quality gate, artifact/registry generation, and Kubeflow compilation all pass"
+      ],
+      "limitations": [
+        "Docker unavailable locally; actual container verification runs in GitHub Actions",
+        "No Kubeflow run or Kubernetes deployment performed",
+        "Pickle artifacts must be trusted local files"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/rental-price-mlops-pipeline/pull/1",
+          "status": "open",
+          "head_sha": "e1cc6937ee5f2ec0352986ad1b08d89dbc37aa75",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/rental-price-mlops-pipeline/actions/runs/35180029879"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/rental-price-mlops-pipeline/actions/runs/35180029897"
+        }
+      ]
+    },
+    {
+      "name": "devops-policy-audit-toolkit",
+      "repository_url": "https://github.com/mrsddq/devops-policy-audit-toolkit",
+      "reviewed_head_sha": "abcc3cc2377864bc3567e42a3f9b1bf8a3603133",
+      "base_sha": null,
+      "status": "merged_implementation_documentation_open",
+      "change_summary": [
+        "Enforce policy/configuration contracts, expiry handling, baseline behavior, and symlink boundaries."
+      ],
+      "validation": [
+        "48 tests passed",
+        "Strict expiry, configuration/baseline handling, and symlink behavior covered"
+      ],
+      "limitations": [
+        "Static policy auditing does not establish deployed enforcement or production security."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/devops-policy-audit-toolkit/pull/1",
+          "status": "merged",
+          "head_sha": "abcc3cc2377864bc3567e42a3f9b1bf8a3603133",
+          "scope": "implementation_or_repository_quality"
+        },
+        {
+          "number": 2,
+          "url": "https://github.com/mrsddq/devops-policy-audit-toolkit/pull/2",
+          "status": "open",
+          "head_sha": "4f5f2bc2120eb4fdab91b6ed3ee02fb3964538f7",
+          "base_sha": "cccb74a280afa17e8c44e8424ee632bb798acdac",
+          "scope": "engineering_runbook_correction",
+          "validation": [
+            "Commands checked against README and CLI",
+            "Markdown code fences balanced",
+            "git diff --check passed"
+          ],
+          "ci": [
+            {
+              "name": "ci",
+              "status": "completed",
+              "conclusion": "success",
+              "url": "https://github.com/mrsddq/devops-policy-audit-toolkit/actions/runs/35180094346"
+            }
+          ]
+        }
+      ],
+      "ci": [],
+      "main_sha": "cccb74a280afa17e8c44e8424ee632bb798acdac",
+      "main_verified_at": "2026-09-17T03:51:13.593Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/devops-policy-audit-toolkit/actions/runs/35179526242",
+          "head_sha": "cccb74a280afa17e8c44e8424ee632bb798acdac",
+          "event": "push"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/devops-policy-audit-toolkit/actions/runs/35179526247",
+          "head_sha": "cccb74a280afa17e8c44e8424ee632bb798acdac",
+          "event": "push"
+        }
+      ],
+      "documentation_reviewed_head_sha": "4f5f2bc2120eb4fdab91b6ed3ee02fb3964538f7"
+    },
+    {
+      "name": "ml-platform-infrastructure-on-kubernetes",
+      "repository_url": "https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes",
+      "reviewed_head_sha": "9ae3a6f6c30f1d08369c2137743b7288af413d19",
+      "base_sha": "cb734def1094ae4ff89f64c1842d893f85de822a",
+      "status": "merged",
+      "change_summary": [
+        "MODEL_PATH selection with MODEL_NAME/MODEL_VERSION assertions on actual artifact",
+        "Correct module-level HTTP request schema and finite inputs",
+        "Reject invalid artifact schema and non-finite parameters",
+        "Count invalid prediction requests and synchronize counters",
+        "Helm passes selected artifact path; genuine container HTTP smoke gate",
+        "Docs separate implemented fixed scorer from proposed MLflow promotion"
+      ],
+      "validation": [
+        "12 unit and API tests passed",
+        "make validate score lint passed",
+        "Helm template and lint passed",
+        "Ruff and git diff --check passed",
+        "Original implementation fails new API suite: 7 assertion failures and 1 schema error across six tests",
+        "All 15 remote changed blobs match tested local files"
+      ],
+      "limitations": [
+        "No Kubernetes deployment",
+        "Scorer coefficients remain illustrative, not trained",
+        "MLflow export/promotion not automated",
+        "Metrics process-local; input range warnings are not statistical drift detection"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes/pull/1",
+          "status": "merged",
+          "head_sha": "9ae3a6f6c30f1d08369c2137743b7288af413d19",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes/actions/runs/35178069865"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes/actions/runs/35178069897"
+        }
+      ],
+      "main_sha": "6ea8f93d5bf70e185b73c57eeb8a434125a82877",
+      "main_verified_at": "2026-09-17T03:51:13.472Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes/actions/runs/35178982696",
+          "head_sha": "6ea8f93d5bf70e185b73c57eeb8a434125a82877",
+          "event": "push"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ml-platform-infrastructure-on-kubernetes/actions/runs/35178982633",
+          "head_sha": "6ea8f93d5bf70e185b73c57eeb8a434125a82877",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "aws-eks-platform-blueprint",
+      "repository_url": "https://github.com/mrsddq/aws-eks-platform-blueprint",
+      "reviewed_head_sha": "71cfa1b5510bf10653a3d81d31dcd96f532ce8c8",
+      "base_sha": "7c446c3f9c3cea260b3ae755ebad166586f1e954",
+      "status": "merged",
+      "change_summary": [
+        "Explicit Kustomize resources include nested workload and exclude Helm values/Argo self-reference",
+        "Structured workload selector/port/service-account validation with negative regressions",
+        "Private endpoint by default; optional public endpoint requires trusted CIDRs and rejects canonical /0 forms",
+        "Explicit supported Kubernetes version input and pinned Terraform modules",
+        "Service-account-specific IRSA module replaces unused broad ELB policy",
+        "Grafana credentials from external Secret; workload SA token automount disabled",
+        "Provider-aware Terraform validate and actual Kustomize render in CI"
+      ],
+      "validation": [
+        "9 tests passed",
+        "make lint/validate and terraform fmt passed",
+        "kubectl kustomize renders ten resources",
+        "Local Terraform init hit provider registry timeout; full Terraform validation subsequently passed in GitHub CI at previous head bc88b61bfe940a311dc6781344e69ffcba1b507e",
+        "Latest head full GitHub CI success, including provider-aware Terraform validate and Kustomize rendering"
+      ],
+      "limitations": [
+        "No AWS plan/apply or live cluster",
+        "Private endpoint requires connected runner and operator access entries",
+        "Controller/metrics-server/Karpenter/observability bootstrap remains manual",
+        "Checkov is advisory --soft-fail, not a security approval"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/aws-eks-platform-blueprint/pull/1",
+          "status": "merged",
+          "head_sha": "71cfa1b5510bf10653a3d81d31dcd96f532ce8c8",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/aws-eks-platform-blueprint/actions/runs/35178386257"
+        }
+      ],
+      "main_sha": "c329adb80606272f30f1faa725b34e632cc71310",
+      "main_verified_at": "2026-09-17T03:51:13.147Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/aws-eks-platform-blueprint/actions/runs/35179032669",
+          "head_sha": "c329adb80606272f30f1faa725b34e632cc71310",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "cloud-cost-optimization-toolkit",
+      "repository_url": "https://github.com/mrsddq/cloud-cost-optimization-toolkit",
+      "reviewed_head_sha": "03cad2b30dfa86b2bb29089be2ea3532c37fd476",
+      "base_sha": "0d3976348f5f0a70aee5798daad5fac373f3966d",
+      "status": "merged",
+      "change_summary": [
+        "Preserve unknown AWS CPU/traffic/target-health telemetry instead of fabricating zero utilization",
+        "Paginate instances, volumes, owned snapshots, and load balancers",
+        "Compute snapshot age from StartTime and batch load-balancer tags in groups of at most 20",
+        "Require explicit available volume state and no attachment for EBS candidates",
+        "Reject invalid/non-finite/out-of-range CPU observations as evidence of idleness",
+        "Aggregate alternative savings as maximum per resource, not sum",
+        "Emit AWS collection coverage warning separately from machine-readable reports",
+        "Regenerate sample report and document data limitations, IAM read operations, and estimate semantics"
+      ],
+      "validation": [
+        "23 local tests passed",
+        "make validate lint security-scan; git diff --check"
+      ],
+      "limitations": [
+        "No live AWS account accessed or provisioned",
+        "CloudWatch utilization, target health, and pricing remain uncollected and explicitly unavailable",
+        "Rightsizing estimate remains a documented 45% heuristic; estimates are not realized savings",
+        "Resource identity assumes a single account per scan"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/cloud-cost-optimization-toolkit/pull/1",
+          "status": "merged",
+          "head_sha": "03cad2b30dfa86b2bb29089be2ea3532c37fd476",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/cloud-cost-optimization-toolkit/actions/runs/35178002762"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/cloud-cost-optimization-toolkit/actions/runs/35178002745"
+        }
+      ],
+      "main_sha": "ddea30982284ca1a0e2eb1e1fb3761763c1ba280",
+      "main_verified_at": "2026-09-17T03:51:13.107Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/cloud-cost-optimization-toolkit/actions/runs/35178781102",
+          "head_sha": "ddea30982284ca1a0e2eb1e1fb3761763c1ba280",
+          "event": "push"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/cloud-cost-optimization-toolkit/actions/runs/35178781122",
+          "head_sha": "ddea30982284ca1a0e2eb1e1fb3761763c1ba280",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "sre-observability-incident-response-lab",
+      "repository_url": "https://github.com/mrsddq/sre-observability-incident-response-lab",
+      "reviewed_head_sha": "5a13285063ddf2be1fd9ab233afa982e3d0c5fcd",
+      "base_sha": "810e2ecdf34259101a466c1c539a45151e6b18b4",
+      "status": "merged",
+      "change_summary": [
+        "Keep health/readiness probes, scrapes, unknown routes, and invalid inputs out of work SLO denominator",
+        "Validate delay_ms once as integer 0..10000; return JSON HTTP 400 without sleeping on invalid input",
+        "Synchronize observations and metric snapshots with a lock",
+        "Export cumulative histogram buckets with both count and sum",
+        "Test real concurrent HTTP requests, probe exclusion, invalid/boundary input, histogram boundaries, and concurrent observations/scrapes",
+        "Document measurement semantics and incomplete deployment/alerting scope"
+      ],
+      "validation": [
+        "11 local tests passed",
+        "make validate; python -m compileall -q services synthetics tests; git diff --check"
+      ],
+      "limitations": [
+        "No cluster resources deployed",
+        "Metrics are process-local and measure handler processing before socket transmission",
+        "Existing alerts are threshold-based, not multi-window error-budget burn-rate implementation",
+        "Grafana dashboard import and Alertmanager routing require additional setup",
+        "Cloud credentials and external services were not used"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/sre-observability-incident-response-lab/pull/1",
+          "status": "merged",
+          "head_sha": "5a13285063ddf2be1fd9ab233afa982e3d0c5fcd",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/sre-observability-incident-response-lab/actions/runs/35178014465"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/sre-observability-incident-response-lab/actions/runs/35178014514"
+        }
+      ],
+      "main_sha": "a31224335a7e4c07bc2fe359064861a3a5c2e463",
+      "main_verified_at": "2026-09-17T03:51:13.178Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/sre-observability-incident-response-lab/actions/runs/35178912372",
+          "head_sha": "a31224335a7e4c07bc2fe359064861a3a5c2e463",
+          "event": "push"
+        },
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/sre-observability-incident-response-lab/actions/runs/35178912496",
+          "head_sha": "a31224335a7e4c07bc2fe359064861a3a5c2e463",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "terraform-gitops-delivery-platform",
+      "repository_url": "https://github.com/mrsddq/terraform-gitops-delivery-platform",
+      "reviewed_head_sha": "0520e5a33ae98edbd265709710f1e801c7049471",
+      "base_sha": "83fc086778033107a374b55d1c42f821d5a45151",
+      "status": "merged",
+      "change_summary": [
+        "Parse YAML instead of substring-search routing checks",
+        "Validate every environment, namespace, repository, revision and destination",
+        "Reject production automated sync",
+        "Reject unknown/malformed Terraform actions with CLI exit 2 and no misleading summary",
+        "Handle reads and both replacement orders",
+        "Document present vs planned controls"
+      ],
+      "validation": [
+        "Python unittest: 14/14 passed",
+        "make validate: all dev/stage/prod routing checks passed",
+        "Terraform 1.9.8 fmt -recursive -check terraform passed",
+        "git diff --check passed"
+      ],
+      "limitations": [
+        "No cloud provisioning, provider init/validate/plan or Kustomize render",
+        "OPA files remain examples and Checkov advisory",
+        "Manual-sync configuration does not itself enforce approvals"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/terraform-gitops-delivery-platform/pull/1",
+          "status": "merged",
+          "head_sha": "0520e5a33ae98edbd265709710f1e801c7049471",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/terraform-gitops-delivery-platform/actions/runs/35178140000"
+        }
+      ],
+      "main_sha": "fd6a3a38390d712636484344f6b0c56cd3ca80fb",
+      "main_verified_at": "2026-09-17T03:51:13.140Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/terraform-gitops-delivery-platform/actions/runs/35178926231",
+          "head_sha": "fd6a3a38390d712636484344f6b0c56cd3ca80fb",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "secure-kubernetes-platform-hardening",
+      "repository_url": "https://github.com/mrsddq/secure-kubernetes-platform-hardening",
+      "reviewed_head_sha": "de8f05ed702c41db4c8ac2c6bfd18d1da1fa1a03",
+      "base_sha": "f1272e68d8c1dad3fb2770fc3461c994f299bbd0",
+      "status": "merged",
+      "change_summary": [
+        "Require SHA-256 image digests for regular/init/ephemeral containers",
+        "Privilege controls cover init/ephemeral containers; explicit missing escalation control denied",
+        "Reject container overrides of non-root execution",
+        "Probe objects formerly mismatched strings; valid sample now passes actual engine",
+        "OPA uses proper raw Pod/AdmissionReview input and Rego v1",
+        "Blocking policy-engine CI with pinned binary versions and checksums",
+        "DNS/ingress peers require both namespace and pod selectors",
+        "Pin sample unprivileged NGINX image and provide bounded writable tmp volume"
+      ],
+      "validation": [
+        "Kyverno CLI 1.15.2: 70/70 policy rule expectations passed across 14 valid/invalid fixtures",
+        "OPA 1.8.0: 11/11 tests passed",
+        "Python unittest: 4/4 passed",
+        "make validate passed; git diff --check passed",
+        "NGINX unprivileged stable-alpine OCI index digest resolved from Docker Hub"
+      ],
+      "limitations": [
+        "No cluster deployment/runtime container smoke test or live CNI isolation test",
+        "OPA is standalone policy, not an installed webhook or Gatekeeper constraint",
+        "Digest pinning does not prove image signature or vulnerability safety",
+        "Trivy remains advisory; not run locally",
+        "DNS/controller labels need site-specific adaptation; HTTPS egress permits any TCP443 destination"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/secure-kubernetes-platform-hardening/pull/1",
+          "status": "merged",
+          "head_sha": "de8f05ed702c41db4c8ac2c6bfd18d1da1fa1a03",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/secure-kubernetes-platform-hardening/actions/runs/35178245751"
+        }
+      ],
+      "main_sha": "491f843ccf0771c58fc83a0c99d701b4b610ca1f",
+      "main_verified_at": "2026-09-17T03:51:13.232Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/secure-kubernetes-platform-hardening/actions/runs/35178968316",
+          "head_sha": "491f843ccf0771c58fc83a0c99d701b4b610ca1f",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "rag-evaluation-suite",
+      "repository_url": "https://github.com/mrsddq/rag-evaluation-suite",
+      "reviewed_head_sha": "b077a2c4c9a06f322d6ee98158f41c2278e57340",
+      "base_sha": null,
+      "status": "merged",
+      "change_summary": [
+        "Correct context-precision normalization so duplicate relevant passages cannot produce a score above one."
+      ],
+      "validation": [
+        "11 tests passed",
+        "Ruff passed"
+      ],
+      "limitations": [
+        "Offline evaluation fixtures; no claim of improved retrieval or generation quality."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/rag-evaluation-suite/pull/1",
+          "status": "merged",
+          "head_sha": "b077a2c4c9a06f322d6ee98158f41c2278e57340",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [],
+      "main_sha": "ec64b8004d163b7c34673107a0d5087dfe8bb8d8",
+      "main_verified_at": "2026-09-17T03:51:13.196Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/rag-evaluation-suite/actions/runs/35178151911",
+          "head_sha": "ec64b8004d163b7c34673107a0d5087dfe8bb8d8",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "pdf-chatbot",
+      "repository_url": "https://github.com/mrsddq/pdf-chatbot",
+      "reviewed_head_sha": "4d4cfdd451f81e567cca5363bb557d4a6d0444f9",
+      "base_sha": "30424dc62c2579260c9c367cb5d427ff85e9ac94",
+      "status": "merged",
+      "change_summary": [
+        "Staging prevents failed later pages from leaving partial index content. Enforce PDF extraction budgets and reject empty/encrypted documents; return citations only for included excerpts and sanitize parser errors."
+      ],
+      "validation": [
+        "7 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/pdf-chatbot/pull/1",
+          "status": "merged",
+          "head_sha": "4d4cfdd451f81e567cca5363bb557d4a6d0444f9",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/pdf-chatbot/actions/runs/35178137489"
+        }
+      ],
+      "main_sha": "5befcebdd6d3d51e70351346eefc740bd4254f69",
+      "main_verified_at": "2026-09-17T03:51:13.580Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/pdf-chatbot/actions/runs/35179137296",
+          "head_sha": "5befcebdd6d3d51e70351346eefc740bd4254f69",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "sentiment-analysis-api",
+      "repository_url": "https://github.com/mrsddq/sentiment-analysis-api",
+      "reviewed_head_sha": "2070cb9a2070df3558d10f7a2dd963564b9c4cf1",
+      "base_sha": "fb28e2279a73288c236a30b40485560165ed48e3",
+      "status": "merged",
+      "change_summary": [
+        "Batch inputs bypassed single-text limits, :D never matched the lowercase lexicon, and negation crossed sentence boundaries. Shared validation, batch budget and focused semantic tests now cover these cases."
+      ],
+      "validation": [
+        "11 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/sentiment-analysis-api/pull/1",
+          "status": "merged",
+          "head_sha": "2070cb9a2070df3558d10f7a2dd963564b9c4cf1",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/sentiment-analysis-api/actions/runs/35178202974"
+        }
+      ],
+      "main_sha": "5d1bbd9ebf43b061b837dff0f183bc390b3c05a9",
+      "main_verified_at": "2026-09-17T03:51:13.687Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/sentiment-analysis-api/actions/runs/35179154972",
+          "head_sha": "5d1bbd9ebf43b061b837dff0f183bc390b3c05a9",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "news-article-extractor-summarizer",
+      "repository_url": "https://github.com/mrsddq/news-article-extractor-summarizer",
+      "reviewed_head_sha": "953dddeda80a5b8aa18417770c20bc3c1ee69a30",
+      "base_sha": "1ab108e3443481f0154c8fbcee04255d659746c6",
+      "status": "merged",
+      "change_summary": [
+        "The previous redirect check occurred after urllib had followed the target. Validate each redirect before requesting it, disable ambient proxies and sanitize upstream failures. DNS rebinding remains documented as a network-policy requirement."
+      ],
+      "validation": [
+        "14 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/news-article-extractor-summarizer/pull/1",
+          "status": "merged",
+          "head_sha": "953dddeda80a5b8aa18417770c20bc3c1ee69a30",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/news-article-extractor-summarizer/actions/runs/35178246846"
+        }
+      ],
+      "main_sha": "6d054ec363ec08709de5d38381b0c85fd0ccb6a3",
+      "main_verified_at": "2026-09-17T03:51:13.575Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/news-article-extractor-summarizer/actions/runs/35179208111",
+          "head_sha": "6d054ec363ec08709de5d38381b0c85fd0ccb6a3",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "ai-code-review-bot",
+      "repository_url": "https://github.com/mrsddq/ai-code-review-bot",
+      "reviewed_head_sha": "309a5070c76572cc36a34f48939c847e13ea367a",
+      "base_sha": "a5eb894f75defdd95a475a239ea56ea150888949",
+      "status": "merged",
+      "change_summary": [
+        "Missing paths returned a clean report, hidden parents hid explicit review roots, comments could suppress secret findings, and action input was interpolated as shell code. Fix these paths, use AST secret assignments, and preserve secret-free diagnostics."
+      ],
+      "validation": [
+        "16 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/ai-code-review-bot/pull/1",
+          "status": "merged",
+          "head_sha": "309a5070c76572cc36a34f48939c847e13ea367a",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ai-code-review-bot/actions/runs/35178674390"
+        }
+      ],
+      "main_sha": "79d1f2d894882ca64e28f8357c8e1b72db03dbbd",
+      "main_verified_at": "2026-09-17T03:51:13.664Z",
+      "main_matches_expected": true,
+      "main_push_ci_success": true,
+      "main_ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ai-code-review-bot/actions/runs/35179223210",
+          "head_sha": "79d1f2d894882ca64e28f8357c8e1b72db03dbbd",
+          "event": "push"
+        }
+      ]
+    },
+    {
+      "name": "deep-research-agent",
+      "repository_url": "https://github.com/mrsddq/deep-research-agent",
+      "reviewed_head_sha": "c385bbf6d0300d4b56df474ec5ef0f574b3e0622",
+      "base_sha": "2c7e97f6ab89c5e65e5e7bc5d2fb6fb1a4d6d967",
+      "status": "open",
+      "change_summary": [
+        "max_sources did not cap all fetched pages, ties depended on thread completion, and failed fetches silently became snippets. Enforce budgets, round-robin query selection, stable ranking, provenance and warnings, public-URL redirect checks, and response limits."
+      ],
+      "validation": [
+        "13 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/deep-research-agent/pull/1",
+          "status": "open",
+          "head_sha": "c385bbf6d0300d4b56df474ec5ef0f574b3e0622",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/deep-research-agent/actions/runs/35178340806"
+        }
+      ]
+    },
+    {
+      "name": "local-voice-ai-pipeline",
+      "repository_url": "https://github.com/mrsddq/local-voice-ai-pipeline",
+      "reviewed_head_sha": "e167eb9f2433f92f3e0c6c9f5e87b822cd043bf5",
+      "base_sha": "6555b5fc85ca530e07125cf2963de2ff750bb517",
+      "status": "open",
+      "change_summary": [
+        "Malformed Ollama payloads were coerced to text and unbounded reads were possible; Piper had no timeout and could report missing or stale output as success. Validate responses, bound requests, stage audio atomically, and protect original input."
+      ],
+      "validation": [
+        "12 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/local-voice-ai-pipeline/pull/1",
+          "status": "open",
+          "head_sha": "e167eb9f2433f92f3e0c6c9f5e87b822cd043bf5",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/local-voice-ai-pipeline/actions/runs/35178382104"
+        }
+      ]
+    },
+    {
+      "name": "llm-guardrails",
+      "repository_url": "https://github.com/mrsddq/llm-guardrails",
+      "reviewed_head_sha": "77ca33e745fdad3cc130f3e194a4db22f0e5cb80",
+      "base_sha": "aa207185538c3e975dc89251e7fff37a5eea94b9",
+      "status": "open",
+      "change_summary": [
+        "Redacted results retained secrets in normalized_text, and overlapping canaries could leave fragments. Redact both serialized text fields, merge spans, normalize canaries, enforce resource budgets, and reject expanded Unicode output over budget."
+      ],
+      "validation": [
+        "21 local tests passed",
+        "Ruff and wheel build passed"
+      ],
+      "limitations": [
+        "Offline fixtures only; no live inference, paid APIs, production deployments, or model quality measurements. See README for scope-specific limits."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/llm-guardrails/pull/1",
+          "status": "open",
+          "head_sha": "77ca33e745fdad3cc130f3e194a4db22f0e5cb80",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/llm-guardrails/actions/runs/35178705670"
+        }
+      ]
+    },
+    {
+      "name": "medical-segmentation",
+      "repository_url": "https://github.com/mrsddq/medical-segmentation",
+      "reviewed_head_sha": "920cf0104d90762a0c6e30618504e4bd6ca52c0b",
+      "base_sha": "20a7e0d949d2632040c46dc28b0137afe12db3f1",
+      "status": "open",
+      "change_summary": [
+        "Preserve NIfTI shape, affine and uint8 mask output",
+        "Compute sample-weighted Dice/IoU directly; keep background slices",
+        "Reject invalid probability/target values, mismatched volume geometry and train/validation case overlap",
+        "Replaced template runbook with repository-specific commands, test scope and artifact boundaries; reconciled README instructions"
+      ],
+      "validation": [
+        "17 local tests passed"
+      ],
+      "limitations": [
+        "Synthetic slice-level validation only; no clinical accuracy or patient-level evaluation",
+        "Fixed optimizer/loss/augmentation recipe limitations documented"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/medical-segmentation/pull/1",
+          "status": "open",
+          "head_sha": "920cf0104d90762a0c6e30618504e4bd6ca52c0b",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/medical-segmentation/actions/runs/35180112862",
+          "head_sha": "920cf0104d90762a0c6e30618504e4bd6ca52c0b"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/medical-segmentation/actions/runs/35180112835",
+          "head_sha": "920cf0104d90762a0c6e30618504e4bd6ca52c0b"
+        }
+      ],
+      "docs_only_followup": true,
+      "documentation_changes": [
+        "README.md",
+        "docs/engineering-runbook.md"
+      ],
+      "docker_validation_head_sha": "920cf0104d90762a0c6e30618504e4bd6ca52c0b",
+      "docker_validation_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/medical-segmentation/actions/runs/35180112835",
+          "head_sha": "920cf0104d90762a0c6e30618504e4bd6ca52c0b"
+        }
+      ]
+    },
+    {
+      "name": "yolov8-detection",
+      "repository_url": "https://github.com/mrsddq/yolov8-detection",
+      "reviewed_head_sha": "3c1bfe740f3088a71c34963466db6a3f4a8fee84",
+      "base_sha": "d3b77df5e354d7a6d24832b265c5957988ac3eb0",
+      "status": "open",
+      "change_summary": [
+        "Fail-fast image/label/class/bounds/exact split-duplicate checks before model download",
+        "Persist normalized absolute dataset YAML and pass exact validated paths to trainer",
+        "Validate missing annotations and clip VisDrone boundary boxes",
+        "Replaced template runbook with repository-specific commands, test scope and artifact boundaries; reconciled README instructions"
+      ],
+      "validation": [
+        "16 local tests passed"
+      ],
+      "limitations": [
+        "No pretrained weights, detector training or mAP run",
+        "Exact hashes do not catch near-duplicate frames; folder layouts only"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/yolov8-detection/pull/1",
+          "status": "open",
+          "head_sha": "3c1bfe740f3088a71c34963466db6a3f4a8fee84",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/yolov8-detection/actions/runs/35180149364",
+          "head_sha": "3c1bfe740f3088a71c34963466db6a3f4a8fee84"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/yolov8-detection/actions/runs/35180149359",
+          "head_sha": "3c1bfe740f3088a71c34963466db6a3f4a8fee84"
+        }
+      ],
+      "docs_only_followup": true,
+      "documentation_changes": [
+        "README.md",
+        "docs/engineering-runbook.md"
+      ],
+      "docker_validation_head_sha": "3c1bfe740f3088a71c34963466db6a3f4a8fee84",
+      "docker_validation_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/yolov8-detection/actions/runs/35180149359",
+          "head_sha": "3c1bfe740f3088a71c34963466db6a3f4a8fee84"
+        }
+      ]
+    },
+    {
+      "name": "clip-image-captioning",
+      "repository_url": "https://github.com/mrsddq/clip-image-captioning",
+      "reviewed_head_sha": "7c7af994c2f7c99c09881488e879f04a33819a1d",
+      "base_sha": "36488f827515eef7d5629c1a0bdc2464d9c1a9bd",
+      "status": "open",
+      "change_summary": [
+        "Implemented missing cached COCO dataset with deterministic byte tokenizer",
+        "Fixed causal future-token leakage and LSTM batch-state mixing",
+        "Implemented training/validation, finite-loss guards, versioned best checkpoint, greedy inference and evaluation",
+        "Replaced template runbook with repository-specific commands, test scope and artifact boundaries; reconciled README instructions"
+      ],
+      "validation": [
+        "10 local tests passed"
+      ],
+      "limitations": [
+        "No real CLIP image encoding or COCO training performed",
+        "Byte-tokenizer baseline; greedy only; no BLEU/CIDEr or caption quality claim"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/clip-image-captioning/pull/1",
+          "status": "open",
+          "head_sha": "7c7af994c2f7c99c09881488e879f04a33819a1d",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/clip-image-captioning/actions/runs/35180185471",
+          "head_sha": "7c7af994c2f7c99c09881488e879f04a33819a1d"
+        },
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/clip-image-captioning/actions/runs/35180185434",
+          "head_sha": "7c7af994c2f7c99c09881488e879f04a33819a1d"
+        }
+      ],
+      "docs_only_followup": true,
+      "documentation_changes": [
+        "docs/engineering-runbook.md"
+      ],
+      "docker_validation_head_sha": "7c7af994c2f7c99c09881488e879f04a33819a1d",
+      "docker_validation_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/clip-image-captioning/actions/runs/35180185471",
+          "head_sha": "7c7af994c2f7c99c09881488e879f04a33819a1d"
+        }
+      ]
+    },
+    {
+      "name": "ocr-pipeline",
+      "repository_url": "https://github.com/mrsddq/ocr-pipeline",
+      "reviewed_head_sha": "256ea42b466453fca9f195790839fb96cc59975d",
+      "base_sha": "986c35a0656789d31a734c36ba4f9a9429202e7e",
+      "status": "open",
+      "change_summary": [
+        "Real CRNN checkpoint inference with CTC blank/repeat decoding and configured recurrent depth",
+        "Corpus-weighted CER/WER with complete prediction pairing and explicit error counts",
+        "Fail on unknown IAM characters, missing images and impossible CTC alignments",
+        "Replaced template runbook with repository-specific commands, test scope and artifact boundaries; reconciled README instructions"
+      ],
+      "validation": [
+        "11 local tests passed"
+      ],
+      "limitations": [
+        "No trained OCR accuracy; synthetic controlled checkpoint only",
+        "Raw state dict requires exact config; validation model selection remains future work",
+        "Two Pillow getdata deprecation warnings in local tests"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/ocr-pipeline/pull/1",
+          "status": "open",
+          "head_sha": "256ea42b466453fca9f195790839fb96cc59975d",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ocr-pipeline/actions/runs/35180219790",
+          "head_sha": "256ea42b466453fca9f195790839fb96cc59975d"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ocr-pipeline/actions/runs/35180219787",
+          "head_sha": "256ea42b466453fca9f195790839fb96cc59975d"
+        }
+      ],
+      "docs_only_followup": true,
+      "documentation_changes": [
+        "README.md",
+        "docs/engineering-runbook.md"
+      ],
+      "docker_validation_head_sha": "256ea42b466453fca9f195790839fb96cc59975d",
+      "docker_validation_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ocr-pipeline/actions/runs/35180219787",
+          "head_sha": "256ea42b466453fca9f195790839fb96cc59975d"
+        }
+      ]
+    },
+    {
+      "name": "pose-estimation-qa",
+      "repository_url": "https://github.com/mrsddq/pose-estimation-qa",
+      "reviewed_head_sha": "25d3be617a0349e12e7b686175a3f3587e09162c",
+      "base_sha": "3f3ef9a784026f6bc0cb89e8e00c9bb0003f061e",
+      "status": "open",
+      "change_summary": [
+        "Robust finite schema validation, categorical visibility and keypoint count consistency",
+        "Use actual image dimensions, retain metadata and write per-annotation reason reports",
+        "Correct accepted retention calculation and partition reconciliation",
+        "Replaced template runbook with repository-specific commands, test scope and artifact boundaries; reconciled README instructions"
+      ],
+      "validation": [
+        "13 local tests passed"
+      ],
+      "limitations": [
+        "Temporal checks explicitly not implemented",
+        "No precision/recall claim without human ground-truth labels"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/pose-estimation-qa/pull/1",
+          "status": "open",
+          "head_sha": "25d3be617a0349e12e7b686175a3f3587e09162c",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/pose-estimation-qa/actions/runs/35180259284",
+          "head_sha": "25d3be617a0349e12e7b686175a3f3587e09162c"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/pose-estimation-qa/actions/runs/35180259271",
+          "head_sha": "25d3be617a0349e12e7b686175a3f3587e09162c"
+        }
+      ],
+      "docs_only_followup": true,
+      "documentation_changes": [
+        "README.md",
+        "docs/engineering-runbook.md"
+      ],
+      "docker_validation_head_sha": "25d3be617a0349e12e7b686175a3f3587e09162c",
+      "docker_validation_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/pose-estimation-qa/actions/runs/35180259271",
+          "head_sha": "25d3be617a0349e12e7b686175a3f3587e09162c"
+        }
+      ]
+    },
+    {
+      "name": "vit-robustness-xai",
+      "repository_url": "https://github.com/mrsddq/vit-robustness-xai",
+      "reviewed_head_sha": "aaac09a82d8f8661d67fd70d2d448890fc1fbbde",
+      "base_sha": "7dd98e9919ccb2e37b7172ca59a8e3e43d393804",
+      "status": "open",
+      "change_summary": [
+        "Repair tuple-based attention capture, wrapped ViT support, normalized rollout and hook cleanup",
+        "Test actual tiny torchvision ViT; match overlay geometry to classifier transform",
+        "Implement subgroup counts/accuracy/Wilson intervals and corruption coverage validation",
+        "Replaced template runbook with repository-specific commands, test scope and artifact boundaries; reconciled README instructions"
+      ],
+      "validation": [
+        "15 local tests passed"
+      ],
+      "limitations": [
+        "No full ImageNet-C/pretrained XAI run",
+        "Subgroup gap is descriptive, not causal fairness evidence",
+        "Partial corruption evaluation explicitly not full benchmark mCE"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/vit-robustness-xai/pull/1",
+          "status": "open",
+          "head_sha": "aaac09a82d8f8661d67fd70d2d448890fc1fbbde",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/vit-robustness-xai/actions/runs/35180310321",
+          "head_sha": "aaac09a82d8f8661d67fd70d2d448890fc1fbbde"
+        },
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/vit-robustness-xai/actions/runs/35180310495",
+          "head_sha": "aaac09a82d8f8661d67fd70d2d448890fc1fbbde"
+        }
+      ],
+      "docs_only_followup": true,
+      "documentation_changes": [
+        "README.md",
+        "docs/engineering-runbook.md"
+      ],
+      "docker_validation_head_sha": "aaac09a82d8f8661d67fd70d2d448890fc1fbbde",
+      "docker_validation_ci": [
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/vit-robustness-xai/actions/runs/35180310321",
+          "head_sha": "aaac09a82d8f8661d67fd70d2d448890fc1fbbde"
+        }
+      ]
+    },
+    {
+      "name": "python-algorithm-lab",
+      "repository_url": "https://github.com/mrsddq/python-algorithm-lab",
+      "reviewed_head_sha": "e42db69dd75a771b3668bbcbf7115e9e4300070a",
+      "base_sha": "57228bb7f4bfe8f664e5ebd203bc54bb87431fd2",
+      "status": "open",
+      "change_summary": [
+        "Replaced unittest commands that collected zero pytest tests",
+        "Isolated collection from interactive historical exercises",
+        "Fixed stable merge sort for objects implementing only __lt__",
+        "Added exhaustive small-input oracle checks, stability and stack/queue lifecycle regressions",
+        "Documented complexity and API contracts; added CI and real CodeBuild commands"
+      ],
+      "validation": [
+        "9 pytest tests passed on Python 3.12; remote matrix 3.11, 3.12, 3.13 passed"
+      ],
+      "limitations": [
+        "Historical practice archive is intentionally not a maintained application API"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/python-algorithm-lab/pull/1",
+          "status": "open",
+          "head_sha": "e42db69dd75a771b3668bbcbf7115e9e4300070a",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/python-algorithm-lab/actions/runs/35178426077"
+        }
+      ]
+    },
+    {
+      "name": "moving-average-trading-bot",
+      "repository_url": "https://github.com/mrsddq/moving-average-trading-bot",
+      "reviewed_head_sha": "ae58a53cc832248bcaab5e47a375e714067cc38d",
+      "base_sha": "4b17b4541cd8588671de073efb2a88588915e05d",
+      "status": "open",
+      "change_summary": [
+        "Validated finite numeric inputs and integer windows even on short history",
+        "Made fills use signals from previous observations only",
+        "Added exact next-bar, fee accounting, affordability, and mark-to-market regressions",
+        "Removed unused pandas and fixed Makefile pytest invocation",
+        "Documented execution model and missing market assumptions"
+      ],
+      "validation": [
+        "26 pytest cases passed; remote CI passed"
+      ],
+      "limitations": [
+        "Offline synthetic educational simulator only",
+        "No broker, live data, slippage, spread, or investment performance claims"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/moving-average-trading-bot/pull/1",
+          "status": "open",
+          "head_sha": "ae58a53cc832248bcaab5e47a375e714067cc38d",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/moving-average-trading-bot/actions/runs/35178540277"
+        }
+      ]
+    },
+    {
+      "name": "e-commerce-web-app",
+      "repository_url": "https://github.com/mrsddq/e-commerce-web-app",
+      "reviewed_head_sha": "605c953455eb3fc0b1c3c68a5ee3f9958dc2ff70",
+      "base_sha": "ba33da5fb0caf11d3ea0ba087bfd93495a584a81",
+      "status": "open",
+      "change_summary": [
+        "Moved deprecated CRA scaffolding to locked Vite/Vitest on Node 24",
+        "Introduced immutable quantity reducer and integer-cent totals",
+        "Implemented remove-one cart behavior and explicit empty states",
+        "Tested search, repeated additions, persistence across filtering, removal, totals, immutability",
+        "Replaced placeholder verification docs and commands"
+      ],
+      "validation": [
+        "3 React Testing Library/Vitest tests and production build passed; production npm audit clean; remote CI passed"
+      ],
+      "limitations": [
+        "Frontend only; state resets on refresh",
+        "No backend pricing authority, checkout, payments, or live deployment",
+        "Product photos require Unsplash access"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/e-commerce-web-app/pull/1",
+          "status": "open",
+          "head_sha": "605c953455eb3fc0b1c3c68a5ee3f9958dc2ff70",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/e-commerce-web-app/actions/runs/35178630131"
+        }
+      ]
+    },
+    {
+      "name": "social-media-web-app",
+      "repository_url": "https://github.com/mrsddq/social-media-web-app",
+      "reviewed_head_sha": "cc780af0a27364897d355bddc9fd2558ec8fc4ff",
+      "base_sha": "717a88829264f63ca38d1109a600c643a1b860f2",
+      "status": "open",
+      "change_summary": [
+        "Added immutable feed reducer, UUID IDs and duplicate-ID protection",
+        "Bounded and trimmed posts with visible validation",
+        "Changed unbounded reaction increments to reversible accessible support toggle",
+        "Verified escaped markup, composer clearing, invalid input handling, reaction toggles and immutability",
+        "Upgraded locked Vite toolchain and removed unused Firebase initialization/dependency"
+      ],
+      "validation": [
+        "4 React Testing Library/Vitest tests and production build passed; full npm audit clean; remote CI passed"
+      ],
+      "limitations": [
+        "In-memory demo only; sample reactions are not actual engagement",
+        "No authentication, persistence, moderation, or external social writes"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/social-media-web-app/pull/1",
+          "status": "open",
+          "head_sha": "cc780af0a27364897d355bddc9fd2558ec8fc4ff",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/social-media-web-app/actions/runs/35178773032"
+        }
+      ]
+    },
+    {
+      "name": "java-tomcat-ci-demo",
+      "repository_url": "https://github.com/mrsddq/java-tomcat-ci-demo",
+      "reviewed_head_sha": "d27c897e62d76ada882d283ae76079c50c25cfff",
+      "base_sha": "384d23a8db570ef244f1260b362baebd919eee5d",
+      "status": "open",
+      "change_summary": [
+        "Implemented explicit Servlet6 liveness endpoint and compatible legacy alias",
+        "Tested actual WAR on loopback embedded Tomcat10.1 including JSON/cache headers, HEAD/POST, landing and missing route",
+        "Aligned Servlet6 API and Tomcat10.1 compatibility",
+        "Fixed Jenkins checkout to requested SCM revision; deployment defaults off and requires main + explicit parameter",
+        "Scoped credentials and enforced verified SSH host keys; removed implicit service restarts"
+      ],
+      "validation": [
+        "JDK17/Maven3.9.11 clean verify passed 4 actual packaged-WAR HTTP integration tests; Jenkinsfile reviewed only"
+      ],
+      "limitations": [
+        "Jenkins installation and external deployment not executed",
+        "Health is process liveness, not downstream readiness",
+        "Small CI/servlet demo without database or business APIs"
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/java-tomcat-ci-demo/pull/1",
+          "status": "open",
+          "head_sha": "d27c897e62d76ada882d283ae76079c50c25cfff",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "CI",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/java-tomcat-ci-demo/actions/runs/35178833390"
+        }
+      ]
+    },
+    {
+      "name": "devops-learning-archive",
+      "repository_url": "https://github.com/mrsddq/devops-learning-archive",
+      "reviewed_head_sha": "21952785dc86acb950621fda723ba0adb1c0b0ae",
+      "base_sha": "981693c09c6d4a804a8c6c7fefd0dd0f8b02d012",
+      "status": "open",
+      "change_summary": [
+        "Repair the audit script entry point and remove an invalid install target.",
+        "Replace the generic engineering runbook with verified repository-specific commands and limits."
+      ],
+      "validation": [
+        "14 unittest tests pass, including invocation outside the checkout. Original direct script command reproduced ModuleNotFoundError.",
+        "git diff --check passed; relative links resolve; setup commands match existing README and checked implementation; no new executable logic."
+      ],
+      "limitations": [
+        "Docker smoke not run locally; historical deployment examples not deployed."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/devops-learning-archive/pull/1",
+          "status": "open",
+          "head_sha": "21952785dc86acb950621fda723ba0adb1c0b0ae",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Archive audit tests",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/devops-learning-archive/actions/runs/35180077418",
+          "head_sha": "21952785dc86acb950621fda723ba0adb1c0b0ae",
+          "event": "pull_request"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/devops-learning-archive/actions/runs/35180077424",
+          "head_sha": "21952785dc86acb950621fda723ba0adb1c0b0ae",
+          "event": "pull_request"
+        },
+        {
+          "name": "Archive audit tests",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/devops-learning-archive/actions/runs/35180074698",
+          "head_sha": "21952785dc86acb950621fda723ba0adb1c0b0ae",
+          "event": "push"
+        }
+      ],
+      "implementation_validation_head_sha": "e0fff57fd715ea65e417cab91152c19bb3058d7c"
+    },
+    {
+      "name": "generative-ai-web-archive",
+      "repository_url": "https://github.com/mrsddq/generative-ai-web-archive",
+      "reviewed_head_sha": "7befc2b632f02120505f40e18e5489af5038b2b5",
+      "base_sha": "9f002f45ed8ada5f10c9746dd92c6d61b09fa545",
+      "status": "open",
+      "change_summary": [
+        "Repair templates, validate translation inputs, encode parameters, and handle provider failures."
+      ],
+      "validation": [
+        "6 offline unittest request tests pass, including templates, request contract, invalid inputs, malformed payloads, timeouts, and missing configuration."
+      ],
+      "limitations": [
+        "Azure calls are mocked; no live provider or deployment validation."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/generative-ai-web-archive/pull/1",
+          "status": "open",
+          "head_sha": "7befc2b632f02120505f40e18e5489af5038b2b5",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Translator request contracts",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/generative-ai-web-archive/actions/runs/35179134962"
+        }
+      ]
+    },
+    {
+      "name": "node-express-learning-archive",
+      "repository_url": "https://github.com/mrsddq/node-express-learning-archive",
+      "reviewed_head_sha": "a70a9f7f50d1523cfa9ee89b2ad30df350a04daa",
+      "base_sha": "60d6a61d9616c68d7bccbe7298f881cdd38df15b",
+      "status": "open",
+      "change_summary": [
+        "Repair form parsing, asset paths, exact deletion, responses, and phone validation."
+      ],
+      "validation": [
+        "npm ci and 8 Node HTTP tests pass: home/static files, create, exact deletion, GET rejection, missing/invalid/duplicate contacts, escaped names. Includes separator-only/overlong phone rejection and unchanged-state checks."
+      ],
+      "limitations": [
+        "Local in-memory demo only; no authentication, persistence, or CSRF protection. Earlier lessons remain historical."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/node-express-learning-archive/pull/1",
+          "status": "open",
+          "head_sha": "a70a9f7f50d1523cfa9ee89b2ad30df350a04daa",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Final contacts lesson",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/node-express-learning-archive/actions/runs/35179388894"
+        }
+      ]
+    },
+    {
+      "name": "30-day-coding-archive",
+      "repository_url": "https://github.com/mrsddq/30-day-coding-archive",
+      "reviewed_head_sha": "a98aadc6f24b146c11222ee06125ed246f8d9a52",
+      "base_sha": "21faece4f8e7242d1c88de098c0efcf53f0198bc",
+      "status": "open",
+      "change_summary": [
+        "Remove Windows-incompatible trailing-space paths and document incomplete exercises."
+      ],
+      "validation": [
+        "Both renamed HTML files are byte-identical to their originals; inspected tracked paths for trailing whitespace."
+      ],
+      "limitations": [
+        "No browser, React build, or chat backend validation; course materials preserved."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/30-day-coding-archive/pull/1",
+          "status": "open",
+          "head_sha": "a98aadc6f24b146c11222ee06125ed246f8d9a52",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": []
+    },
+    {
+      "name": "mlops-learning-archive",
+      "repository_url": "https://github.com/mrsddq/mlops-learning-archive",
+      "reviewed_head_sha": "1b347420e1e7cfe6134e95a5162694ac2c1475e1",
+      "base_sha": "f9d84c386cb6f17c1010e30f1ba86b69212c782c",
+      "status": "open",
+      "change_summary": [
+        "Seed holdouts, resolve bundled data reliably, and align Docker packaging."
+      ],
+      "validation": [
+        "One parameterized unittest runs all 3 bundled-data scripts twice from an unrelated directory: 6 executions, identical outputs per script and finite numeric RMSE."
+      ],
+      "limitations": [
+        "No cloud deployment; Docker builds not run locally; earlier notebooks are not covered. Seeded repeatability is not evidence of real-market predictive quality."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/mlops-learning-archive/pull/1",
+          "status": "open",
+          "head_sha": "1b347420e1e7cfe6134e95a5162694ac2c1475e1",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Rental lab reproducibility",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/mlops-learning-archive/actions/runs/35179307076"
+        },
+        {
+          "name": "Docker Smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/mlops-learning-archive/actions/runs/35179307116"
+        }
+      ]
+    },
+    {
+      "name": "ai-car-ml-notebooks",
+      "repository_url": "https://github.com/mrsddq/ai-car-ml-notebooks",
+      "reviewed_head_sha": "5039127990ab729793c39ca938dba4f41a4f7c17",
+      "base_sha": "d461cf789834f235906c6563a1eec9870a564210",
+      "status": "open",
+      "change_summary": [
+        "Replace no-op verification with structural notebook checks and explicit execution limits.",
+        "Replace the generic engineering runbook with verified repository-specific commands and limits."
+      ],
+      "validation": [
+        "6 primary notebooks pass nbformat schema checks; historical NameError outputs remain reported.",
+        "git diff --check passed; relative links resolve; setup commands match existing README and checked implementation; no new executable logic."
+      ],
+      "limitations": [
+        "Schema checks do not execute notebooks or validate model results; notebook environments remain heterogeneous."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/ai-car-ml-notebooks/pull/1",
+          "status": "open",
+          "head_sha": "5039127990ab729793c39ca938dba4f41a4f7c17",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Notebook structure",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ai-car-ml-notebooks/actions/runs/35180111312",
+          "head_sha": "5039127990ab729793c39ca938dba4f41a4f7c17",
+          "event": "pull_request"
+        },
+        {
+          "name": "Notebook structure",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/ai-car-ml-notebooks/actions/runs/35180107955",
+          "head_sha": "5039127990ab729793c39ca938dba4f41a4f7c17",
+          "event": "push"
+        }
+      ],
+      "implementation_validation_head_sha": "817f85b11da0337e047bfbb7c7ebe1aa3394a7e5"
+    },
+    {
+      "name": "udacity-computer-vision-nanodegreee",
+      "repository_url": "https://github.com/mrsddq/udacity-computer-vision-nanodegreee",
+      "reviewed_head_sha": "59e265745c17d12fc5a5f94fd007752da5996d6a",
+      "base_sha": "69c3a44f4d12adf3b265e21613e0af113c87ac6e",
+      "status": "open",
+      "change_summary": [
+        "Validate notebook structure and preserve accurate coursework provenance."
+      ],
+      "validation": [
+        "104 primary notebooks pass nbformat schema checks; one historical SyntaxError output remains reported."
+      ],
+      "limitations": [
+        "No notebook execution, training, dataset or GPU downloads; incomplete exercises remain course artifacts."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/udacity-computer-vision-nanodegreee/pull/1",
+          "status": "open",
+          "head_sha": "59e265745c17d12fc5a5f94fd007752da5996d6a",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": [
+        {
+          "name": "Notebook structure",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/mrsddq/udacity-computer-vision-nanodegreee/actions/runs/35179469077"
+        }
+      ]
+    },
+    {
+      "name": "frontend-learning",
+      "repository_url": "https://github.com/mrsddq/frontend-learning",
+      "reviewed_head_sha": "dd97ffa989d309647dee5f936036e04c33fde447",
+      "base_sha": "f9a885bf4501a5bbdd86eb8cd8d0f122255c1aa3",
+      "status": "open",
+      "change_summary": [
+        "Document static entry points and unverified legacy React build assumptions."
+      ],
+      "validation": [
+        "README paths and package manifests inspected; static source folders exist."
+      ],
+      "limitations": [
+        "Documentation-only change; no claim that legacy React builds or external APIs currently work."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/frontend-learning/pull/1",
+          "status": "open",
+          "head_sha": "dd97ffa989d309647dee5f936036e04c33fde447",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": []
+    },
+    {
+      "name": "research-portfolio-packet",
+      "repository_url": "https://github.com/mrsddq/research-portfolio-packet",
+      "reviewed_head_sha": "a1d3a3ea50c3665bb51d26d68e15697afb64ea4c",
+      "base_sha": "de02812bfa1c99ae6698d8ac393570df6351a23e",
+      "status": "open",
+      "change_summary": [
+        "Separate proposed studies from measured results; add reproducible experiment evidence requirements."
+      ],
+      "validation": [
+        "Documentation reviewed and whitespace checked. Experiment-record JSON parsed."
+      ],
+      "limitations": [
+        "Documentation only; no model benchmark or live service validation."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/research-portfolio-packet/pull/1",
+          "status": "open",
+          "head_sha": "a1d3a3ea50c3665bb51d26d68e15697afb64ea4c",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": []
+    },
+    {
+      "name": "ai-ml-technical-blog",
+      "repository_url": "https://github.com/mrsddq/ai-ml-technical-blog",
+      "reviewed_head_sha": "ed91395e1c2721a36ddb7fb5ad2152c781db1997",
+      "base_sha": "afe8cece75782b21905a3adc82e2434442fcebda",
+      "status": "open",
+      "change_summary": [
+        "Link a concrete artifact-serving article to code evidence and clarify draft verification."
+      ],
+      "validation": [
+        "Documentation reviewed and whitespace checked."
+      ],
+      "limitations": [
+        "Documentation only; no model benchmark or live service validation."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/ai-ml-technical-blog/pull/1",
+          "status": "open",
+          "head_sha": "ed91395e1c2721a36ddb7fb5ad2152c781db1997",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": []
+    },
+    {
+      "name": "github-profile-setup",
+      "repository_url": "https://github.com/mrsddq/github-profile-setup",
+      "reviewed_head_sha": "707385653d32a3ccc22a99e8a6ee587b39e21906",
+      "base_sha": "8b21fe184e972fd5224858eb602dbfcc7290483a",
+      "status": "open",
+      "change_summary": [
+        "Align profile and pinning guidance with tested project scope and evidence."
+      ],
+      "validation": [
+        "Documentation reviewed and whitespace checked."
+      ],
+      "limitations": [
+        "Documentation only; no model benchmark or live service validation."
+      ],
+      "pull_requests": [
+        {
+          "number": 1,
+          "url": "https://github.com/mrsddq/github-profile-setup/pull/1",
+          "status": "open",
+          "head_sha": "707385653d32a3ccc22a99e8a6ee587b39e21906",
+          "scope": "implementation_or_repository_quality"
+        }
+      ],
+      "ci": []
+    },
+    {
+      "name": "mrsddq",
+      "repository_url": "https://github.com/mrsddq/mrsddq",
+      "reviewed_head_sha": null,
+      "base_sha": null,
+      "status": "open",
+      "review_branch_url": "https://github.com/mrsddq/mrsddq/tree/codex/public-portfolio-quality-review-2026-09-17",
+      "change_summary": [
+        "Publish this dated portfolio quality report and its machine-readable record."
+      ],
+      "validation": [
+        "Inventory reconciled against 39 public repository names; report JSON parses."
+      ],
+      "limitations": [
+        "Documentation snapshot; no independent runtime behavior or model quality claim."
+      ],
+      "pull_requests": [
+        {
+          "number": null,
+          "url": null,
+          "status": "open",
+          "head_sha": null,
+          "branch_url": "https://github.com/mrsddq/mrsddq/tree/codex/public-portfolio-quality-review-2026-09-17",
+          "scope": "profile_quality_report",
+          "note": "This report commit; no self-referential commit hash."
+        }
+      ],
+      "ci": []
+    }
+  ]
+}
