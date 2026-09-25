@@ -19,8 +19,6 @@ My recent work at Handshake AI and AfterQuery extends that experience into evalu
 
 These are portfolio implementations, demos, and blueprints. Each repository documents its scope, setup, and validation steps.
 
-[Engineering quality review — 17 September 2026](docs/portfolio-quality-review-2026-09-17.md): concrete fixes, validation evidence and publication status across my public repositories.
-
 ## Engineering toolkit
 
 | Area | Tools and practices |
